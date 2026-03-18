@@ -1,5 +1,7 @@
 ﻿using Models;
 
+Banque banque = new Banque() { Nom = "Techno Banking" };
+
 Personne john = new Personne()
 {
     Nom = "Doe",
@@ -14,20 +16,22 @@ Courant courant = new Courant()
     Titulaire = john
 };
 
-courant.Depot(-20);
-Console.WriteLine($"Solde après un dépot de -20 : {courant.Solde}");
+banque.Ajouter(courant);
 
-courant.Depot(200);
-Console.WriteLine($"Solde après un dépot de 200 : {courant.Solde}");
+banque["00001"].Depot(-20);
+Console.WriteLine($"Solde après un dépot de -20 : {banque["00001"].Solde}");
 
-courant.Retrait(-20);
-Console.WriteLine($"Solde après un retrait de -20 : {courant.Solde}");
+banque["00001"].Depot(200);
+Console.WriteLine($"Solde après un dépot de 200 : {banque["00001"].Solde}");
 
-courant.Retrait(100);
-Console.WriteLine($"Solde après un retrait de 100 : {courant.Solde}");
+banque["00001"].Retrait(-20);
+Console.WriteLine($"Solde après un retrait de -20 : {banque["00001"].Solde}");
 
-courant.Retrait(200);
-Console.WriteLine($"Solde après un retrait de 200 : {courant.Solde}");
+banque["00001"].Retrait(100);
+Console.WriteLine($"Solde après un retrait de 100 : {banque["00001"].Solde}");
 
-courant.Retrait(100);
-Console.WriteLine($"Solde après un retrait de 100 : {courant.Solde}");
+banque["00001"].Retrait(200);
+Console.WriteLine($"Solde après un retrait de 200 : {banque["00001"].Solde}");
+
+banque["00001"].Retrait(100);
+Console.WriteLine($"Solde après un retrait de 100 : {banque["00001"].Solde}");
