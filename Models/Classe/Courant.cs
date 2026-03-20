@@ -19,10 +19,23 @@ public class Courant : Compte
     }
 
 
-    //public Courant(string numero, Personne titulaire,double ligneDeCredit) :base(numero, titulaire)
-    //{
-    //    this.LigneDeCredit = ligneDeCredit; 
-    //}
+    //----
+    //CTOR
+    //----
+    public Courant(string numero, Personne titulaire, double ligneDeCredit) : base(numero, titulaire) //Ligne de credit rajoutée mais pas obligatoire concernant l'exo p.142
+    {
+     
+
+        
+    }
+
+    public Courant(string numero, double ligneDeCredit, Personne titulaire) : base(numero, titulaire)
+    {
+        this.LigneDeCredit = ligneDeCredit;
+
+
+    }
+
 
     //--------
     //METHODES

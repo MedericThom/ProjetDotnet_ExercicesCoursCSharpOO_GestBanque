@@ -4,11 +4,9 @@ namespace Models.Classe
 {
     public abstract class Compte : ICustomer, IBanker
     {
-        public static double operator +(double value, Compte compte)
-        {
-            return (value < 0 ? 0 : value) + (compte.Solde < 0 ? 0 : compte.Solde);
-        }
-
+        //----------
+        //PROPRIETES
+        //----------
         public string Numero { get; private set; }
         public double Solde { get; private set; }
         public Personne Titulaire { get; private set; }
@@ -25,20 +23,30 @@ namespace Models.Classe
         }
 
 
-        //public Compte(string numero, Personne titulaire)
-        //{
-        //        this.Numero = numero;
-        //        this.Titulaire = titulaire;
-        //}
+        //----
+        //CTOR
+        //----
+        protected Compte(string numero, Personne titulaire) //Protected CAR classe ABSTRACT !!!!
+        {
+            this.Numero = numero;
+            this.Titulaire = titulaire;
+        }
 
-        //public Compte(string numero, Personne titulaire, double solde) //Cas base de données
-        //{
-        //    this.Numero = numero;
-        //    this.Titulaire = titulaire;
-        //    this.Solde = solde;
-        //}
+        protected Compte(string numero, Personne titulaire, double solde) //Cas base de données
+        {
+            this.Numero = numero;
+            this.Titulaire = titulaire;
+            this.Solde = solde;
+        }
 
 
+        //--------
+        //METHODES
+        //--------
+        public static double operator +(double value, Compte compte)
+        {
+            return (value < 0 ? 0 : value) + (compte.Solde < 0 ? 0 : compte.Solde);
+        }
 
         public virtual void Retrait(double montant)
         {

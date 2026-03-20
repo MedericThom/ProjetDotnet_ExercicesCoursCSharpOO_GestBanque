@@ -18,18 +18,12 @@ Personne john = new Personne()
     DateNaiss = new DateTime(1970, 1, 1)
 };
 
-Courant courant = new Courant()
-{
-    Numero = "00001",
-    LigneDeCredit = 100,
-    Titulaire = john
-};
+Courant courant = new Courant ("00001",john,100);
 
-Epargne epargne = new Epargne()
-{
-    Numero = "00002",
-    Titulaire = john
-};
+Epargne epargne = new Epargne("00002", john);
+
+
+
 
 banque.Ajouter(courant);
 banque.Ajouter(epargne);
