@@ -1,4 +1,6 @@
-﻿namespace Models
+﻿using Models.Interface;
+
+namespace Models.Classe
 {
     public abstract class Compte : ICustomer, IBanker
     {

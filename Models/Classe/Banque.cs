@@ -1,4 +1,4 @@
-﻿namespace Models
+﻿namespace Models.Classe
 {
     public class Banque
     {
@@ -29,9 +29,9 @@
 
             foreach (Compte compte in _comptes.Values)
             {
-                if(compte.Titulaire == titulaire)
+                if (compte.Titulaire == titulaire)
                 {
-                    total += compte;                    
+                    total += compte;
                 }
             }
 

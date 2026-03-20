@@ -1,16 +1,16 @@
-﻿namespace Models;
+﻿namespace Models.Classe;
 
 public class Courant : Compte
 {
     public double LigneDeCredit
     {
         get { return field; }
-        set 
+        set
         {
             if (value < 0)
                 return; //Erreur!!!
 
-            field = value; 
+            field = value;
         }
     }
 

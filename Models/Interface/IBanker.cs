@@ -1,4 +1,6 @@
-﻿namespace Models
+﻿using Models.Classe;
+
+namespace Models.Interface
 {
     public interface IBanker : ICustomer
     {

@@ -1,4 +1,4 @@
-﻿namespace Models;
+﻿namespace Models.Classe;
 
 public class Epargne : Compte
 {
@@ -9,7 +9,7 @@ public class Epargne : Compte
         double oldSolde = Solde;
         base.Retrait(montant);
 
-        if(Solde != oldSolde)
+        if (Solde != oldSolde)
         {
             DernierRetrait = DateTime.Now;
         }
