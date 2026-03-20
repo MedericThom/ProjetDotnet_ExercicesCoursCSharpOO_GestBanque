@@ -1,4 +1,6 @@
-﻿namespace Models
+﻿using Models.Interface;
+
+namespace Models.Classe
 {
     public abstract class Compte : ICustomer, IBanker
     {
@@ -7,9 +9,9 @@
             return (value < 0 ? 0 : value) + (compte.Solde < 0 ? 0 : compte.Solde);
         }
 
-        public string Numero { get; set; }
+        public string Numero { get; private set; }
         public double Solde { get; private set; }
-        public Personne Titulaire { get; set; }
+        public Personne Titulaire { get; private set; }
 
         public void Depot(double montant)
         {
@@ -21,6 +23,22 @@
 
             Solde += montant;
         }
+
+
+        //public Compte(string numero, Personne titulaire)
+        //{
+        //        this.Numero = numero;
+        //        this.Titulaire = titulaire;
+        //}
+
+        //public Compte(string numero, Personne titulaire, double solde) //Cas base de données
+        //{
+        //    this.Numero = numero;
+        //    this.Titulaire = titulaire;
+        //    this.Solde = solde;
+        //}
+
+
 
         public virtual void Retrait(double montant)
         {

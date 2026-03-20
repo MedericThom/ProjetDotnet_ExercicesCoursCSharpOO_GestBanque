@@ -1,10 +1,11 @@
 ﻿using Models;
+using Models.Classe;
 using Models.OperatorsExo;
 
-Celsius celsius = new Celsius() { Temperature = 30 };
-Fahrenheit fahrenheit = celsius;
+//Celsius celsius = new Celsius() { Temperature = 30 };
+//Fahrenheit fahrenheit = celsius;
 
-celsius = (Celsius)fahrenheit;
+//celsius = (Celsius)fahrenheit;
 
 
 

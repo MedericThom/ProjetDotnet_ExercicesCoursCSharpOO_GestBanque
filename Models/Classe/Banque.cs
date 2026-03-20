@@ -1,15 +1,21 @@
-﻿namespace Models
+﻿namespace Models.Classe
 {
     public class Banque
     {
+        //----------
+        //PROPRIETES
+        //----------
         private Dictionary<string, Compte> _comptes = new Dictionary<string, Compte>();
-        public string Nom { get; set; }
+        public string Nom { get; init; }
 
         public Compte this[string numero]
         {
             get => _comptes[numero];
         }
 
+        //--------
+        //METHODES
+        //--------
         public void Ajouter(Compte compte)
         {
             _comptes.Add(compte.Numero, compte);
@@ -29,9 +35,9 @@
 
             foreach (Compte compte in _comptes.Values)
             {
-                if(compte.Titulaire == titulaire)
+                if (compte.Titulaire == titulaire)
                 {
-                    total += compte;                    
+                    total += compte;
                 }
             }
 
