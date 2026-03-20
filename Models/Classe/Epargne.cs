@@ -2,8 +2,20 @@
 
 public class Epargne : Compte
 {
+    //PROPRIETES
     public DateTime DernierRetrait { get; private set; }
 
+
+
+    //public Epargne() : base()
+    //{
+
+    //}
+
+
+    //--------
+    //METHODES
+    //--------
     public override void Retrait(double montant)
     {
         double oldSolde = Solde;
