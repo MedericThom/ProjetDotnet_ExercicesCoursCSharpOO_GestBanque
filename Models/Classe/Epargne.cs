@@ -2,15 +2,19 @@
 
 public class Epargne : Compte
 {
+    //----------
     //PROPRIETES
+    //----------
     public DateTime DernierRetrait { get; private set; }
 
 
+    //----
+    //CTOR
+    //----
+    public Epargne(string numero, Personne titulaire) : base(numero, titulaire)
+    {
 
-    //public Epargne() : base()
-    //{
-
-    //}
+    }
 
 
     //--------
